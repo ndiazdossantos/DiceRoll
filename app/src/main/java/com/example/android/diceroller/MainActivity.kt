@@ -23,21 +23,29 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+    //cargamos la imagen
 
     lateinit var diceImage: ImageView
 
+    //hacemos un override(sobreescribimos) la función oncreate, llamando a la superclase
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        super.onCreate(savedInstanceState) //cargamos el constructor
+        setContentView(R.layout.activity_main) // cargamos el layour
+
+        // creamos la variable del boton donde la llamamos
 
         val rollButton: Button = findViewById(R.id.roll_button)
+
+        // Metodo encargado de lanzar el dado, cuando clikamos inicia rollDice
         rollButton.setOnClickListener {
             rollDice()
         }
-
+        // Posteriormente Busca la vista del dado por la ID de la imagen dada
         diceImage = findViewById(R.id.dice_image)
     }
-
+        // Metodo rollDice , en el que se genera mediante un numero aleatorio entre 1-6 elige una de las diferentes acciones
+        // un funcionamiento de un switch
     private fun rollDice() {
         val randomInt = Random().nextInt(6) + 1
         val drawableResource = when (randomInt) {
@@ -48,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             5 -> R.drawable.dice_5
             else -> R.drawable.dice_6
         }
-
+         // cargamos las imagenes para cada caso
         diceImage.setImageResource(drawableResource)
     }
 }
