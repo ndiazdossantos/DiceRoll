@@ -37,4 +37,12 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/roll" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:rotationX="-4"
+        android:text="www.noesencillito.com" />
+
 </LinearLayout>

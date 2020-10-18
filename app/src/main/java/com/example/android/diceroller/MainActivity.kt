@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         val drawableResource = when (randomInt) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
+            3 -> R.drawable.xrandm // añadida imagen para cuando salga el número 3 cargue visualmente en pantalla
             4 -> R.drawable.dice_4
             5 -> R.drawable.dice_5
             else -> R.drawable.dice_6
