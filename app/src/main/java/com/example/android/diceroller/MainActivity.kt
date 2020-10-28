@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
     //cargamos la imagen
 
     lateinit var diceImage: ImageView
-    val text = "Hello toast!"
     val duration = Toast.LENGTH_SHORT
 
 
@@ -38,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState) //cargamos el constructor
         setContentView(R.layout.activity_main) // cargamos el layour
+        val text = getString(R.string.tirada)
         val toast = Toast.makeText(applicationContext, text, duration)
         // creamos la variable del boton donde la llamamos
 
