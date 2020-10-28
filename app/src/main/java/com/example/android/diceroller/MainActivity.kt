@@ -19,6 +19,7 @@ package com.example.android.diceroller
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
@@ -26,13 +27,18 @@ class MainActivity : AppCompatActivity() {
     //cargamos la imagen
 
     lateinit var diceImage: ImageView
+    val text = "Hello toast!"
+    val duration = Toast.LENGTH_SHORT
+
+
+
 
     //hacemos un override(sobreescribimos) la función oncreate, llamando a la superclase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState) //cargamos el constructor
         setContentView(R.layout.activity_main) // cargamos el layour
-
+        val toast = Toast.makeText(applicationContext, text, duration)
         // creamos la variable del boton donde la llamamos
 
         val rollButton: Button = findViewById(R.id.roll_button)
@@ -40,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         // Metodo encargado de lanzar el dado, cuando clikamos inicia rollDice
         rollButton.setOnClickListener {
             rollDice()
+            toast.show()
         }
         // Posteriormente Busca la vista del dado por la ID de la imagen dada
         diceImage = findViewById(R.id.dice_image)
